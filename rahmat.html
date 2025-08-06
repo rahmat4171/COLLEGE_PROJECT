@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sershah Engineering College, Sasaram</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary-dark: #0d3d56;
+      --primary-blue: #0077b6;
+      --accent-yellow: #ffc107;
+      --light-bg: #ffffff;
+      --text-dark: #1a202c;
+      --text-light: #f7fafc;
+      --border-color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    header {
+      background-color: var(--primary-dark);
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    header img {
+      height: 96px;
+      width: 96px;
+      margin-right: 20px;
+      background: white;
+      padding: 5px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 5px 0 0;
+    }
+
+    nav {
+      background-color: var(--primary-blue);
+      border-bottom: 4px solid var(--accent-yellow);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #0369a1;
+    }
+
+    .active-link {
+      background-color: var(--accent-yellow);
+      color: var(--text-dark);
+      font-weight: bold;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    aside {
+      background-color: #f8fafc;
+      border-right: 1px solid var(--border-color);
+      flex: 1;
+      min-width: 250px;
+      padding: 30px;
+    }
+
+    aside h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      color: #555;
+    }
+
+    aside a {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: #555;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    aside a i {
+      margin-right: 10px;
+      width: 20px;
+    }
+
+    aside a:hover {
+      color: #0077b6;
+    }
+
+    .sub-links {
+      list-style: none;
+      padding-left: 30px;
+      margin-top: -8px;
+      margin-bottom: 10px;
+    }
+
+    .sub-links li {
+      margin: 6px 0;
+    }
+
+    .sub-links li a {
+      font-size: 15px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .sub-links li a:hover {
+      color: #0077b6;
+    }
+
+    main {
+      flex: 3;
+      padding: 30px;
+      min-width: 300px;
+    }
+
+    .notice {
+      background-color: #dbeafe;
+      border-left: 5px solid #3b82f6;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 4px;
+      color: #1e40af;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 280px;
+      background-color: var(--light-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .map-section {
+      text-align: center;
+      background-color: #f9fafb;
+      padding: 40px 20px;
+    }
+
+    .map-section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .map-section p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .map-container {
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 4px solid white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: var(--primary-dark);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer .small {
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div style="display: flex; align-items: center;">
+        <img src="logo1.jpg"
+             alt="College Logo"
+             onerror="this.onerror=null;this.src='https://placehold.co/96x96/FFFFFF/000000?text=Logo';">
+        <div>
+          <h1>Sershah Engineering College, Sasaram</h1>
+          <p>(Affiliated to Bihar Engineering University, Patna)</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="#">About</a>
+      <a href="#" class="active-link">Academics</a>
+      <a href="#">Faculty</a>
+      <a href="#">Placements</a>
+      <a href="#">Contact Us</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Sidebar -->
+      <aside>
+        <h3>Quick Links</h3>
+        <a href="#"><i class="fas fa-graduation-cap"></i>Courses</a>
+        <ul class="sub-links">
+          <li><a href="#">B.Tech</a></li>
+          <li><a href="#">M.Tech</a></li>
+        </ul>
+        <a href="#"><i class="fas fa-flask"></i>Lab</a>
+        <a href="#"><i class="fas fa-hotel"></i>Hostel</a>
+        <a href="#"><i class="fas fa-concierge-bell"></i>Amenities</a>
+      </aside>
+
+      <!-- Main -->
+      <main>
+        <div class="notice">
+          <p><strong>Important Notice</strong></p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Welcome Note</h3>
+            <p>Welcome to the official website of Sershah Engineering College. We are committed to providing quality education and fostering innovation. Explore our programs and facilities to learn more.</p>
+          </div>
+          <div class="card">
+            <h3>Announcements</h3>
+            <p>Latest news, events, and updates from the campus will be displayed here. Stay tuned for important information regarding admissions, examinations, and more.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Map -->
+    <section class="map-section">
+      <h2>Our Location</h2>
+      <p>Find us on the map below.</p>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps?q=25.050890386102726,83.95414641520244&hl=en&z=16&output=embed" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Sershah Engineering College, Sasaram. All Rights Reserved.</p>
+      <p class="small">Designed with a standard professional layout.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
